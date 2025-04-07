@@ -1,503 +1,646 @@
+/* Oscura Dusk Theme for Obsidian */
+
 /*Fonts*/
-:root {
-    /*
-    If the font isn't installed in the system, 
-    it will go down the list until it finds on that is.
-    */
-
-    --default-font: "Inter", sans-serif; /*Note and Settings Text*/
-    --font-monospace: "Source Code Pro", monospace; /*Code block text*/
-
-    /*
-    var(--variableName); is a variable,
-    so you can use what you set over and over without having
-    to rewrite it multiple times.
-    */
-}
-
-/*Dark Theme Variables*/
+:root
 .theme-dark {
-    --background-modifier-cover: rgba(0, 0, 0, 0.8); /*Obsidian Title Bar Bg*/
-    --background-primary: #202020; /*Note background*/
-    --background-primary-alt: #1a1a1a; /*Note Title background active*/
-    --background-secondary: #161616; /*Sidebar background*/
-    --background-secondary-alt: #000000; /*Sidebar Title background*/
-    
-    --background-modifier-border: #333; /*Border outline of quotes, tables, line breaks*/
-    
-    --text-normal: #dcddde; /*Text body of note*/
-    --text-muted: ; /*Text darker for sidebar, toggles, inactive, tags, etc*/
-    --text-accent: #7f6df2; /*Links*/
-    --text-accent-hover: #8875ff; /*Links hover*/
-    --text-faint: #666; /*Link brackets color & Gutter Numbers*/
+  color-scheme: dark;
+  /* Accent color */
+  --accent-h: 60;
+  --accent-s: 50%;
+  --accent-l: 70%;
 
-    --text-highlight-bg: rgba(255, 255, 0, 0.4); /*Search Matches*/
-    --text-highlight-bg-active: rgba(255, 128, 0, 0.4); /*Active Search Match (Preview Mode)*/
-    --text-selection: rgba(23, 48, 77, 0.99); /*Text Selections*/
+  /* Core background colors */
+  --bg_dark2_x: 18, 20, 25;
+  --bg_dark2: rgb(var(--bg_dark2_x));
+  --bg_dark_x: 19, 20, 25;
+  --bg_dark: rgb(var(--bg_dark_x));
+  --bg_x: 19, 20, 25;
+  --bg: rgb(var(--bg_x));
+  --bg_highlight_x: 35, 36, 41;
+  --bg_highlight: rgb(var(--bg_highlight_x));
+  --bg_highlight_dark_x: 30, 31, 36;
+  --bg_highlight_dark: rgb(var(--bg_highlight_dark_x));
+  --terminal_black_x: 50, 51, 59;
+  --terminal_black: rgb(var(--terminal_black_x));
 
-    --interactive-normal: #2a2a2a; /*Button Color*/
-    --interactive-hover: #303030; /*Button Hovered Color*/
-    --interactive-accent: #483699; /*Workspace Note Title Underline*/
-    --interactive-accent-hover: #4d3ca6; /*Menu Button Hover*/
-    
-    --scrollbar-bg: rgba(255, 255, 255, 0.05); /*Scrollbar Gutter Background*/
-    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.1); /*Scrollbar Color*/
-    --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.2); /*Scrollbar Dragged Color*/
+  /* Core foreground colors */
+  --fg_x: 230, 230, 230;
+  --fg: rgb(var(--fg_x));
+  --fg_dark_x: 200, 200, 200;
+  --fg_dark: rgb(var(--fg_dark_x));
+  --comment_x: 70, 71, 79;
+  --comment: rgb(var(--comment_x));
+
+  /* Base colors */
+  --blue0_x: 61, 89, 161;
+  --blue0: rgb(var(--blue0_x));
+  --blue_x: 71, 159, 250;
+  --blue: rgb(var(--blue_x));
+  --cyan_hsl: 202 100% 75%;
+  --cyan_x: 84, 192, 163;
+  --cyan: rgb(var(--cyan_x));
+  --magenta_hsl: 60 50% 70%;
+  --magenta_x: 230, 231, 163;
+  --magenta: rgb(var(--magenta_x));
+  --pink_hsl: 331 100% 43%;
+  --pink_x: 217, 0, 105;
+  --pink: rgb(var(--pink_x));
+  --orange_x: 249, 185, 140;
+  --orange: rgb(var(--orange_x));
+  --yellow_x: 230, 231, 163;
+  --yellow: rgb(var(--yellow_x));
+  --green_x: 84, 192, 163;
+  --green: rgb(var(--green_x));
+  --teal_x: 84, 192, 163;
+  --teal: rgb(var(--teal_x));
+  --red_x: 255, 92, 92;
+  --red: rgb(var(--red_x));
+  --red1_x: 216, 79, 104;
+  --red1: rgb(var(--red1_x));
+  --unknown: #ffffff;
+
+  --link-external-filter: invert(35%) sepia(28%) saturate(681%) hue-rotate(192deg) brightness(94%) contrast(85%);
 }
 
 .theme-light {
-    --background-primary: #ffffff; /*Note background*/
-    --background-primary-alt: #f5f6f8; /*Note Title background active*/
-    --background-secondary: #f2f3f5; /*Sidebar background*/
-    --background-secondary-alt: #e3e5e8; /*Sidebar Title background*/
-    
-    --background-modifier-border: #ddd; /*Border outline of quotes, tables, line breaks*/
+  /* Accent color */
+  --accent-h: 60;
+  --accent-s: 30%;
+  --accent-l: 50%;
 
-    --text-normal: #2e3338; /*Text body of note*/
-    --text-muted: #888888; /*Text darker for sidebar, toggles, inactive, tags, etc*/
-    --text-accent: #705dcf; /*Links*/
-    --text-accent-hover: #7a6ae6; /*Links hover*/
-    --text-faint: #999999; /*Link brackets color*/
+  /* Core background colors */
+  --bg_dark2_x: 210, 210, 210;
+  --bg_dark2: rgb(var(--bg_dark2_x));
+  --bg_dark_x: 220, 220, 220;
+  --bg_dark: rgb(var(--bg_dark_x));
+  --bg_x: 230, 230, 230;
+  --bg: rgb(var(--bg_x));
+  --bg_highlight_x: 240, 240, 240;
+  --bg_highlight: rgb(var(--bg_highlight_x));
+  --bg_highlight_dark_x: 200, 200, 200;
+  --bg_highlight_dark: rgb(var(--bg_highlight_dark_x));
+  --terminal_black_x: 25, 25, 25;
+  --terminal_black: rgb(var(--terminal_black_x));
 
-    --text-highlight-bg: rgba(255, 255, 0, 0.4); /*Search Matches*/
-    --text-highlight-bg-active:rgba(255, 128, 0, 0.4); /*Active Search Match (Preview Mode)*/
-    --text-selection: rgba(23, 48, 77, 0.99); /*Text Selections*/
-    
-    --interactive-normal: #f2f3f5; /*Button background Color*/
-    --interactive-hover:#e9e9e9; /*Button Hovered Color*/
-    --interactive-accent: #7b6cd9; /*Workspace Note Title Underline*/
-    --interactive-accent-hover: #8273e6; /*Menu Button Hover*/
-    
-    --scrollbar-bg: rgba(0, 0, 0, 0.05); /*Scrollbar Gutter Background*/
-    --scrollbar-thumb-bg: rgba(0, 0, 0, 0.1); /*Scrollbar Color*/
-    --scrollbar-active-thumb-bg: rgba(0, 0, 0, 0.2); /*Scrollbar Dragged Color*/
+  /* Core foreground colors */
+  --fg_x: 35, 35, 35;
+  --fg: rgb(var(--fg_x));
+  --fg_dark_x: 45, 45, 45;
+  --fg_dark: rgb(var(--fg_dark_x));
+  --comment_x: 120, 120, 120;
+  --comment: rgb(var(--comment_x));
+
+  /* Base colors */
+  --blue0_x: 39, 71, 125;
+  --blue0: rgb(var(--blue0_x));
+  --blue_x: 52, 84, 138;
+  --blue: rgb(var(--blue_x));
+  --cyan_x: 15, 75, 110;
+  --cyan: rgb(var(--cyan_x));
+  --magenta_hsl: 60 30% 50%;
+  --magenta_x: 166, 166, 100;
+  --magenta: rgb(var(--magenta_x));
+  --pink_hsl: 331 50% 43%;
+  --pink_x: 166, 75, 109;
+  --pink: rgb(var(--pink_x));
+  --orange_x: 170, 110, 70;
+  --orange: rgb(var(--orange_x));
+  --yellow_x: 166, 166, 100;
+  --yellow: rgb(var(--yellow_x));
+  --green_x: 51, 99, 92;
+  --green: rgb(var(--green_x));
+  --teal_x: 51, 99, 92;
+  --teal: rgb(var(--teal_x));
+  --red_x: 180, 60, 60;
+  --red: rgb(var(--red_x));
+  --red1_x: 150, 50, 50;
+  --red1: rgb(var(--red1_x));
+  --unknown: #000000;
+
+  --link-external-filter: invert(62%) sepia(9%) saturate(266%) hue-rotate(189deg) brightness(97%) contrast(88%);
 }
 
-/*Box Sizing Reset - this makes it easier to set any ::before and ::after pseudo-elements' dimensions,
-since it includes any border and padding into the height and width values you set.
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}*/
-
-/*----Startup Progress Bar Screen----*/
-/*Startup Progress Bar Window*/
-.progress-bar {}
-
-/*Startup Text*/
-.progress-bar .progress-bar-message {}
-
-/*Startup Progress Bar Background*/
-.progress-bar-indicator .progress-bar-line {}
-
-/*Startup Progress Bar Moving Line*/
-.progress-bar-indicator .progress-bar-subline {}
-
-
-/*----Settings----*/
-/*All Popup Windows: Settings*/
-.modal {}
-
-/*Command Palette & Quick Switcher*/
-.prompt {}
-
-/*The notifications in the top right*/
-.notice {}
-
-/*Context Menu (Right CLick sth)*/
-.menu {}
-
-/*Setting Dropdown*/
-.dropdown {}
-
-/*Community Themes Browser*/
-.community-theme {}
-
-/*Community Plugins Browser*/
-.community-plugin {}
-
-
-/*--Extras--*/
-
-/*Tooltip Popup*/
-.tooltip {}
-
-
-
-/*----Workspace----*/
-/* ribbons, the thin vertical bars to the far left/right */
-.workspace-ribbon {}
-
-/*Side Panels*/
-.workspace-tabs {}
-
-/*Side Panel: Icons*/
-.workspace-tab-header-inner-icon {}
-
-
-
-
-/*--File Explorer--*/
-
-/*Nav Top: Create Note, Sort, Create Folder*/
-.nav-header {}
-
-/*Folder*/
-.nav-folder {}
-.nav-folder-title {}
-
-/*Files*/
-.nav-file {}
-.nav-file-title {}
-/* (also applies to many plugins displaying file lists in the side bar) */
-
-
-/*Status Bar*/
-.status-bar {}
-
-/*--Title Bar--*/
-
-/*Title Bar*/
-.titlebar {}
-
-/*Navigation Button - Back */
-.mod-back {}
-
-/*Navigation Button - Forward*/
-.mod-forward {}
-
-/*Window Control- Minimize*/
-.mod-minimize {}
-
-/*Window Control- Minimize*/
-.mod-maximize {}
-
-/*Window Control- Close*/
-.mod-close {}
-
-
-
-/*Buttons*/
-/*Default Buttons*/
-button {}
-/*Settings Buttons*/
-button.mod-cta {}
-/*Warning Buttons*/
-button.mod-warning{}
-
-
-
-/*--Workspace: Notes--*/
-/*Note Title Bar*/
-.workspace-leaf .view-header {}
-
-/*Inactive Note Titlebar*/
-/*Note Title Bar: Text*/
-.view-header-title {}
-
-/*Note Title Bar: Note Icon*/
-.view-header-icon {}
-
-/*Note Title Bar: Settings Icons*/
-.view-action {}
-
-/*Active Note Titlebar*/
-/*Note Title Bar: Text*/
-.workspace-leaf.mod-active .view-header-title {}
-
-/*Note Title Bar: Note Icon*/
-.workspace-leaf.mod-active .view-header-icon {}
-
-/*Note Title Bar: Settings Icons*/
-.workspace-leaf.mod-active .view-action {}
-
-
-
-
-
-
-
-/*----Notes----*/
-.cm-s-obsidian:not(.is-live-preview) {} /*Source Mode*/
-.markdown-source-view {} /*Source Mode*/
-
-.cm-s-obsidian.is-live-preview {} /*Live Preview Mode*/
-
-.markdown-preview-view {} /*Reading Mode*/
-
-/*--Emphasis--*/
-
-/*Bold*/
-strong {} /*Reading View*/
-.cm-s-obsidian .cm-strong {} /*Editing View*/
-
-/*Italic/Emphasis*/
-em {} /*Reading View*/
-.cm-em {} /*Editing View*/
-
-/*Highlight*/
-.markdown-preview-view mark {} /*Reading View*/
-.cm-s-obsidian .cm-highlight {} /*Editing View*/
-.cm-s-obsidian .cm-formatting-highlight {} /*Editing View highlight symbols/syntax*/
-
-/*Strikethrough*/
-.cm-strikethrough {} /*Editing View*/
-del {} /*Reading View*/
-
-/*--Headers/Headings--*/
-h1 {} /*Reading Mode*/
-h2 {} /*Reading Mode*/
-h3 {} /*Reading Mode*/
-h4 {} /*Reading Mode*/
-h5 {} /*Reading Mode*/
-h6 {} /*Reading Mode*/
-.cm-header-1 {} /*Source Mode*/
-.cm-header-2 {} /*Source Mode*/
-.cm-header-3 {} /*Source Mode*/
-.cm-header-4 {} /*Source Mode*/
-.cm-header-5 {} /*Source Mode*/
-.cm-header-6 {} /*Source Mode*/
-
-.cm-header {} /* applies to all source mode headings */
-
-
-
-/*--Horizontal Line--*/
-hr {} /*Reading Mode*/
-.hr.cm-line {} /*Source Mode*/
-.HyperMD-hr-bg {} /*Source Mode*/
-
-/*HR Line Text*/
-.cm-s-obsidian pre.HyperMD-hr {} /*Source Mode*/
-
-
-
-
-/*--Comments--*/
-/* html comments and obsidian style comments */
-.cm-comment {}
-
-
-
-
-/*--Code--*/
-code {}
-
-/*Inline Code*/
-.cm-s-obsidian span.cm-inline-code {} /*Source Mode*/
-.markdown-preview-view code {} /*Reading Mode*/
-
-/*Codeblock (no language specified) */
-.markdown-preview-view pre {} /*Reading Mode*/
-.cm-s-obsidian pre.HyperMD-codeblock {} /*Source Mode*/
-
-/*Codeblock: Language Specified: ```js*/
-.markdown-preview-view pre[class*=language-] {} /*Reading Mode*/
-.markdown-preview-view code[class*=language-] {} /*Reading Mode*/
-
-
-
-
-/*--Links--*/
-.cm-s-obsidian span.cm-hmd-internal-link {} /*Source Mode*/
-
-/*Wiki Links*/
-a.internal-link {} /*Reading Mode*/
-
-/*Markdown Links*/
-a.external-link {} /*Reading Mode*/
-
-/*Link to No Page*/
-a.internal-link.is-unresolved {} /*Reading Mode*/
-
-
-
-
-/*--Lists--*/
-.cm-s-obsidian .HyperMD-list-line {} /*Source Mode*/
-
-/*List Bullet/Number/Formatting*/
-li::marker {} /*Reading Mode*/
-span.cm-formatting-list-ul {} /*Source Mode*/
-span.cm-formatting-list-ol {} /*Source Mode*/
-
-/*Bullet Lists*/
-ul {} /*Reading Mode*/
-
-/*Bullet List Text*/
-ul li {} /*Reading Mode*/
-
-/*Bullet List Symbol*/
-ul li::marker {} /*Reading Mode*/
-
-/*Numbered Lists*/
-ol {} /*Reading Mode*/
-
-/*Numbered List Text*/
-ol li {} /*Reading Mode*/
-
-/*Numbered List Number*/
-ol li::marker {} /*Reading Mode*/
-
-/*Checkbox List*/
-li.task-list-item {} /*Reading Mode*/
-input[type=checkbox i] {} /*Reading Mode*/
-
-/*Checked Checkbox*/
-.markdown-preview-view .task-list-item-checkbox:checked {} /*Reading Mode*/
-input[type=checkbox]:checked {} /*Reading Mode*/
-
-
-
-
-
-/*--Blockquotes--*/
-.markdown-preview-view blockquote {}
-
-
-
-
-
-/*--Tables--*/
-table {} /*Reading Mode*/
-
-/*Table Headers*/
-table th {} /*Reading Mode*/
-
-/*Table Column*/
-table td {} /*Reading Mode*/
-
-/*Table Row*/
-table tr {} /*Reading Mode*/
-.cm-s-obsidian .HyperMD-table-row {} /*Source Mode*/
-
-
-
-
-/*--Tags--*/
-a.tag {} /*Reading Mode*/
-.cm-s-obsidian span.cm-hashtag {} /*Source Mode*/
-
-
-
-
-
-/*--Frontmatter/Metadata/Yaml--*/
-.frontmatter-container {} /*Reading Mode*/
-.CodeMirror-line .cm-s-obsidian .cm-hmd-frontmatter {} /*Source Mode*/
-
-/*Frontmatter Tag*/
-.frontmatter-container .frontmatter-alias {} /*Reading Mode*/
-
-
-
-
-
-/*--Embeds--*/
-.markdown-preview-view .markdown-embed {} /*Reading Mode*/
-.internal-embed.is-loaded:not(.image-embed) {} /*Reading Mode*/
-
-.markdown-source-view.mod-cm6 .cm-embed-block {} /*Live Preview Mode*/
-.markdown-source-view .markdown-embed:not(.mod-empty) {} /*Live Preview Mode*/
-
-/*File Embed*/
-.markdown-preview-view .file-embed {} /*Reading Mode*/
-.markdown-source-view .file-embed:not(.mod-empty) {} /*Live Preview Mode*/
-
-/*Empty/No Embed Found*/
-.markdown-source-view .markdown-embed.mod-empty {} /*Live Preview Mode*/
-.markdown-source-view .file-embed.mod-empty {} /*Live Preview Mode*/
-
-/*Embed Titles*/
-.markdown-embed-title {} /*Reading Mode*/
-.file-embed-title {} /*Reading Mode*/
-
-/*Embed Link*/
-.markdown-embed-link {}
-.file-embed-link {}
-
-
-/*--Footnotes--*/
-
-/*Footnote link in note*/
-.markdown-preview-view a.footnote-link {} /*Reading View*/
-
-/*Reference Number in text*/
-.cm-s-obsidian span.cm-footref {} /*Editing View*/
-
-/*Footnotes section at the bottom of the note*/
-.markdown-preview-view .footnotes {} /*Reading View*/
-
-/*Footnote back ref (arrow) at the bottom of the note*/
-.footnote-backref {} /*Reading View*/
-
-
-/*--Graph--*/
-
-.graph-view.color-fill {
-	color: var(--text-muted); /*color of nodes*/
-}
-.graph-view.color-fill-focused { /*color of focused node/note*/
-	color: #ffdd00;
-}
-.theme-dark .graph-view.color-fill-tag { /*dark mode tag color*/
-	color: #704214;
-}
-.theme-light .graph-view.color-fill-tag { /*light mode tag color*/
-	color: #E0D3AF;
-}
-.theme-dark .graph-view.color-fill-attachment { /*dark mode attachment color*/
-	color: #1a356b;
-}
-.theme-light .graph-view.color-fill-attachment { /*light mode attachment color*/
-	color: #83D4F4;
-}
-.graph-view.color-fill-unresolved { /*unresolved(not created yet) notes*/
-	color: var(--text-muted);
-	opacity: 0.4;
-}
-.graph-view.color-arrow { /*arrow color*/
-	color: var(--text-normal);
-	opacity: 0.5;
-}
-.graph-view.color-circle { /*focused node border color*/
-	color: var(--text-normal);
-}
-.graph-view.color-line { /*link color*/
-	color: var(--background-modifier-border);
-}
-.graph-view.color-text { /*text color*/
-	color: var(--text-normal);
-}
-.graph-view.color-fill-highlight { /*focused node color*/
-	color: var(--interactive-accent);
-}
-.graph-view.color-line-highlight { /*focused node connections*/
-	color: var(--interactive-accent);
+.theme-dark,
+.theme-light {
+  --color_red_rgb: var(--red_x);
+  --color-red: var(--red);
+  --color_purple_rgb: var(--magenta_x);
+  --color-purple: var(--magenta);
+  --color_green_rgb: var(--green_x);
+  --color-green: var(--green);
+  --color_cyan_rgb: var(--cyan_x);
+  --color-cyan: var(--cyan);
+  --color_blue_rgb: var(--blue_x);
+  --color-blue: var(--blue);
+  --color_yellow_rgb: var(--yellow_x);
+  --color-yellow: var(--yellow);
+  --color_orange_rgb: var(--orange_x);
+  --color-orange: var(--orange);
+  --color_pink_rgb: var(--magenta_x);
+  --color-pink: var(--magenta);
+
+  /* Core UI elements */
+  --background-primary: var(--bg);
+  --background-primary-alt: var(--bg);
+  --background-secondary: var(--bg_dark);
+  --background-secondary-alt: var(--bg_dark);
+
+  --background-modifier-border: var(--bg_highlight);
+  --background-modifier-border-focus: var(--bg_highlight);
+  --background-modifier-border-hover: var(--bg_highlight);
+  --background-modifier-form-field: var(--bg_dark);
+  --background-modifier-form-field-highlighted: var(--bg_dark);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+  --background-modifier-success: var(--green);
+  --background-modifier-error: var(--red1);
+  --background-modifier-error-hover: var(--red);
+  --background-modifier-cover: rgba(var(--bg_dark_x), 0.8);
+  --background-modifier-hover: var(--bg_highlight);
+  --background-modifier-message: rgba(var(--bg_highlight_x), 0.9);
+  --background-modifier-active-hover: var(--bg_highlight);
+
+  /* Text colors */
+  --text-normal: var(--fg);
+  --text-faint: var(--comment);
+  --text-muted: var(--fg_dark);
+  --text-error: var(--red);
+  --text-accent: var(--magenta);
+  --text-accent-hover: var(--orange);
+  --text-error: var(--red1);
+  --text-error-hover: var(--red);
+  --text-selection: var(--unknown);
+  --text-on-accent: var(--bg);
+  --text-highlight-bg: rgba(var(--green_x), 0.25);
+  --text-selection: rgba(var(--blue0_x), 0.6);
+  --bold-color: var(--orange);
+  --italic-color: var(--orange);
+
+  /* Interactive elements */
+  --interactive-normal: var(--bg_dark);
+  --interactive-hover: var(--bg);
+  --interactive-success: var(--green);
+  --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --interactive-accent-hover: var(--blue);
+
+  /* Scrollbars */
+  --scrollbar-bg: var(--bg_dark2);
+  --scrollbar-thumb-bg: var(--comment);
+  --scrollbar-active-thumb-bg: var(--bg_dark);
+  --scrollbar-width: 0px;
+
+  /* Headings */
+  --h1-color: var(--red);
+  --h2-color: var(--yellow);
+  --h3-color: var(--green);
+  --h4-color: var(--cyan);
+  --h5-color: var(--blue);
+  --h6-color: var(--magenta);
+
+  --border-width: 2px;
+
+  /* Tags */
+  --tag-color: var(--magenta);
+  --tag-background: rgba(var(--magenta_x), 0.15);
+  --tag-color-hover: var(--cyan);
+  --tag-background-hover: rgba(var(--cyan_x), 0.15);
+
+  /* Links */
+  --link-color: var(--magenta);
+  --link-color-hover: var(--cyan);
+  --link-external-color: var(--magenta);
+  --link-external-color-hover: var(--cyan);
+
+  /* Checkboxes */
+  --checkbox-radius: var(--radius-l);
+  --checkbox-color: var(--green);
+  --checkbox-color-hover: var(--green);
+  --checkbox-marker-color: var(--bg);
+  --checkbox-border-color: var(--comment);
+  --checkbox-border-color-hover: var(--comment);
+
+  /* Tables */
+  --table-header-background: var(--bg_dark2);
+  --table-header-background-hover: var(--bg_dark2);
+
+  --flashing-background: rgba(var(--blue0_x), 0.3);
+
+  /* Code blocks */
+  --code-normal: var(--fg);
+  --code-background: var(--bg_highlight_dark);
+
+  /* Mermaid diagrams */
+  --mermaid-note: var(--blue0);
+  --mermaid-actor: var(--fg_dark);
+  --mermaid-loopline: var(--blue);
+
+  /* Callouts */
+  --blockquote-background-color: var(--bg_dark);
+  --callout-default: var(--blue_x);
+  --callout-info: var(--blue_x);
+  --callout-summary: var(--cyan_x);
+  --callout-tip: var(--cyan_x);
+  --callout-todo: var(--cyan_x);
+  --callout-bug: var(--red_x);
+  --callout-error: var(--red1_x);
+  --callout-fail: var(--red1_x);
+  --callout-example: var(--magenta_x);
+  --callout-important: var(--green_x);
+  --callout-success: var(--teal_x);
+  --callout-question: var(--yellow_x);
+  --callout-warning: var(--orange_x);
+  --callout-quote: var(--fg_dark_x);
+
+  /* Icons */
+  --icon-color-hover: var(--blue);
+  --icon-color-focused: var(--magenta);
+  --icon-color-active: var(--magenta);
+
+  /* Navigation */
+  --nav-item-color-hover: var(--fg);
+  --nav-item-background-hover: var(--bg_highlight);
+  --nav-item-color-active: var(--red);
+  --nav-item-background-active: var(--bg_highlight);
+  --nav-file-tag: rgba(var(--yellow_x), 0.9);
+  --nav-indentation-guide-color: var(--bg_highlight);
+
+  /* Indentation */
+  --indentation-guide-color: var(--comment);
+  --indentation-guide-color-active: var(--comment);
+
+  /* Graph view */
+  --graph-line: var(--comment);
+  --graph-node: var(--fg);
+  --graph-node-tag: var(--orange);
+  --graph-node-attachment: var(--blue);
+
+  /* Tabs */
+  --tab-text-color-focused-active: rgba(var(--red_x), 0.8);
+  --tab-text-color-focused-active-current: var(--red);
+
+  /* Modals */
+  --modal-border-color: var(--bg_highlight);
+  --prompt-border-color: var(--bg_highlight);
+  --slider-track-background: var(--bg_highlight);
+
+  /* Embeds */
+  --embed-background: var(--bg_dark);
+  --embed-padding: 1.5rem 1.5rem 0.5rem;
+
+  /* Canvas */
+  --canvas-color: var(--bg_highlight_x);
+
+  /* Toggles */
+  --toggle-thumb-color: var(--bg);
+
+  /* Images */
+  --image-radius: 0px;
+
+  /* Dates */
+  --date-color: var(--blue);
+  --date-background-color: var(--bg_highlight);
 }
 
-.graph-controls {} /*Graph Menu*/
-
-/* Cursor */
-.cm-cursorLayer .cm-cursor {
-	/* border-left: ... */
+/* Headings */
+body:not(.heading-indicator-off) .markdown-rendered>:is(h1, h2, h3, h4, h5, h6),
+body:not(.heading-indicator-off) .markdown-preview-sizer>div>:is(h1, h2, h3, h4, h5, h6) {
+  position: relative;
 }
 
-/* animation of the blinking */
-.cm-cursorLayer {
-	/* deactivate built-in animation from CodeMirror */
-	animation-name: none !important; /* important needed */
+body.h1-divider-on :is(.markdown-preview-sizer>div>h1, .markdown-rendered>h1, .HyperMD-header-1)::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  right: 0px;
+  opacity: 0.5;
+  bottom: 0;
+  background-image: linear-gradient(to left, var(--h1-color) 30%, transparent 70%);
 }
 
-@keyframes phase-blink {
-	15% { opacity: 1 }
-	50% { opacity: 0 }
-	85% { opacity: 1 }
+body.h2-divider-on :is(.markdown-preview-sizer>div>h2, .markdown-rendered>h2, .HyperMD-header-2)::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  right: 0px;
+  opacity: 0.5;
+  bottom: 0;
+  background-image: linear-gradient(to left, var(--h2-color) 30%, transparent 70%);
 }
 
-.cm-cursorLayer .cm-cursor {
-	animation-duration: 2200ms;
-	animation-name: phase-blink;
+body.h3-divider-on :is(.markdown-preview-sizer>div>h3, .markdown-rendered>h3, .HyperMD-header-3)::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  right: 0px;
+  opacity: 0.5;
+  bottom: 0;
+  background-image: linear-gradient(to left, var(--h3-color) 30%, transparent 70%);
 }
+
+body.h4-divider-on :is(.markdown-preview-sizer>div>h4, .markdown-rendered>h4, .HyperMD-header-4)::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  right: 0px;
+  opacity: 0.5;
+  bottom: 0;
+  background-image: linear-gradient(to left, var(--h4-color) 30%, transparent 70%);
+}
+
+body.h5-divider-on :is(.markdown-preview-sizer>div>h5, .markdown-rendered>h5, .HyperMD-header-5)::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  right: 0px;
+  opacity: 0.5;
+  bottom: 0;
+  background-image: linear-gradient(to left, var(--h5-color) 30%, transparent 70%);
+}
+
+body.h6-divider-on :is(.markdown-preview-sizer>div>h6, .markdown-rendered>h6, .HyperMD-header-6)::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  right: 0px;
+  opacity: 0.5;
+  bottom: 0;
+  background-image: linear-gradient(to left, var(--h6-color) 30%, transparent 70%);
+}
+
+/* Mobile */
+.is-mobile .suggestion-item.is-selected {
+  background-color: var(--bg_highlight);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar:horizontal {
+  height: var(--scrollbar-width);
+}
+
+/* Tooltip */
+.tooltip {
+  color: var(--fg);
+}
+
+/* Links */
+.cm-url {
+  filter: none !important;
+}
+
+.cm-string.cm-url.external-link {
+  filter: var(--link-external-filter) !important;
+}
+
+a.external-link {
+  filter: none;
+  background-image: unset;
+  padding-right: 0;
+}
+
+a.external-link::after {
+  content: url(public/images/874d8b8e340f75575caa.svg);
+  filter: var(--link-external-filter);
+  padding-left: 2.5px;
+  bottom: -1px;
+  position: relative;
+}
+
+/* Images  */
+.image-embed {
+  border-radius: var(--image-radius);
+}
+
+/* Tables */
+body {
+  --table-width: 88cqw;
+}
+
+.theme-dark,
+.theme-light .markdown-rendered thead tr {
+  background: var(--table-header-background);
+}
+
+body:not(.table-width-obsidian-default) .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper,
+body:not(.table-width-obsidian-default) :is(.markdown-rendered, .markdown-source-view.mod-cm6.is-live-preview) table {
+  width: 100% !important;
+}
+
+.markdown-source-view,
+.markdown-reading-view {
+  container-type: inline-size;
+}
+
+.table-width-customized .markdown-source-view.mod-cm6.is-live-preview .cm-content>.cm-table-widget,
+.table-width-customized .markdown-rendered .markdown-preview-sizer>div:has(>table) {
+  overflow: auto;
+  width: var(--table-width) !important;
+  margin-left: calc((var(--table-width) - 100%) / -2) !important;
+}
+
+/* Notice */
+.notice {
+  background-color: var(--bg_dark);
+  border: 2px solid var(--bg_highlight);
+}
+
+/* Callouts */
+.callout[data-callout="quote"] {
+  background-color: rgba(var(--bg_highlight_dark_x), 0.5);
+}
+
+.callout[data-callout="cite"] {
+  --callout-color: var(--pink_x);
+  background-color: rgba(var(--pink_x), 0.15);
+}
+
+/* Callout styles from Border theme */
+.callout-style-1.theme-light {
+  --callout-border-width: 1px;
+  --callout-border-opacity: 0.25;
+  --callout-padding: 0;
+  --callout-radius: var(--radius-s);
+  --callout-title-color: inherit;
+  --callout-title-padding: 8px 16px;
+  --callout-title-size: inherit;
+  --callout-content-padding: 0px 16px;
+  --callout-content-background: #FFFFFFBF;
+  --callout-content-radius: 0px;
+}
+
+.callout-style-1.theme-dark {
+  --callout-border-width: 1px;
+  --callout-border-opacity: 0.25;
+  --callout-padding: 0;
+  --callout-radius: var(--radius-s);
+  --callout-title-color: inherit;
+  --callout-title-padding: 8px 16px;
+  --callout-title-size: inherit;
+  --callout-content-padding: 0px 16px;
+  --callout-content-background: #00000040;
+  --callout-content-radius: 0px;
+}
+
+.callout-style-2.theme-light {
+  --callout-border-width: 1px;
+  --callout-border-opacity: 0.25;
+  --callout-padding: 0 6px 6px;
+  --callout-radius: var(--radius-s);
+  --callout-title-color: inherit;
+  --callout-title-padding: 8px 16px;
+  --callout-title-size: inherit;
+  --callout-content-padding: 0px 16px;
+  --callout-content-background: #FFFFFFBF;
+  --callout-content-radius: 4px;
+}
+
+.callout-style-2.theme-dark {
+  --callout-border-width: 1px;
+  --callout-border-opacity: 0.25;
+  --callout-padding: 0 6px 6px;
+  --callout-radius: var(--radius-s);
+  --callout-title-color: inherit;
+  --callout-title-padding: 8px 16px;
+  --callout-title-size: inherit;
+  --callout-content-padding: 0px 16px;
+  --callout-content-background: #00000040;
+  --callout-content-radius: 4px;
+}
+
+.callout-style-3:is(.theme-light, .theme-dark) {
+  --callout-border-width: 0 0 0 4px;
+  --callout-border-opacity: 1;
+  --callout-padding: var(--size-4-3) var(--size-4-3) var(--size-4-3) var(--size-4-6);
+  --callout-radius: var(--radius-s);
+  --callout-title-color: inherit;
+  --callout-title-padding: 0;
+  --callout-title-size: inherit;
+  --callout-content-padding: 0;
+  --callout-content-background: transparent;
+  --callout-content-radius: 0px;
+}
+
+.callout-style-4.theme-light {
+  --callout-border-width: 0 0 0 4px;
+  --callout-border-opacity: 1;
+  --callout-padding: 0;
+  --callout-radius: var(--radius-s);
+  --callout-title-color: inherit;
+  --callout-title-padding: 8px 16px;
+  --callout-title-size: inherit;
+  --callout-content-padding: 0px 16px;
+  --callout-content-background: #FFFFFFBF;
+  --callout-content-radius: 0px;
+}
+
+.callout-style-4.theme-dark {
+  --callout-border-width: 0 0 0 4px;
+  --callout-border-opacity: 1;
+  --callout-padding: 0;
+  --callout-radius: var(--radius-s);
+  --callout-title-color: inherit;
+  --callout-title-padding: 8px 16px;
+  --callout-title-size: inherit;
+  --callout-content-padding: 0px 16px;
+  --callout-content-background: #00000040;
+  --callout-content-radius: 0px;
+}
+
+/* Vim modal */
+.ͼ2 .cm-panels-bottom {
+  border-top: var(--border-width) solid var(--bg_highlight);
+}
+
+.cm-vim-message {
+  color: var(--red);
+}
+
+/* Kanban plugin */
+.kanban-plugin__lane-action-add {
+  color: var(--fg);
+}
+
+.kanban-plugin__lane-action-add:hover {
+  color: var(--bg);
+}
+
+.kanban-plugin__autocomplete-item:hover,
+.kanban-plugin__autocomplete-item-active {
+  color: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  background-color: var(--bg_highlight);
+}
+
+/* Various-complement plugin */
+.various-complements__suggestion-item::before {
+  filter: var(--link-external-filter);
+}
+
+.various-complements__footer::before {
+  filter: var(--link-external-filter);
+}
+
+/* Math Jax */
+mjx-math {
+  font-size: 110% !important;
+}
+
+/* Metadata */
+.cm-atom {
+  color: var(--blue);
+}
+
+span.cm-hmd-frontmatter.cm-meta {
+  color: rgba(var(--blue0_x), 0.9);
+}
+
+/* Alternative checkboxes - from Border theme */
+body:not(.disable-alternative-checkboxes) input[data-task="<"]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="<"]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="<"]>p>input:checked,
+body:not(.disable-alternative-checkboxes) input[data-task=">"]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task=">"]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task=">"]>p>input:checked,
+body:not(.disable-alternative-checkboxes) input[data-task="d"]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="d"]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="d"]>p>input:checked,
+body:not(.disable-alternative-checkboxes) input[data-task="u"]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="u"]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="u"]>p>input:checked,
+body:not(.disable-alternative-checkboxes) input[data-task="S"]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="S"]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="S"]>p>input:checked,
+body:not(.disable-alternative-checkboxes) input[data-task=" "]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task=" "]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task=" "]>p>input:checked,
+body:not(.disable-alternative-checkboxes) input[data-task="\""]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="\""]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="\""]>p>input:checked,
+body:not(.disable-alternative-checkboxes) input[data-task="c"]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="c"]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="c"]>p>input:checked,
+body:not(.disable-alternative-checkboxes) input[data-task="p"]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="p"]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="p"]>p>input:checked,
+body:not(.disable-alternative-checkboxes) input[data-task="n"]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="n"]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="n"]>p>input:checked,
+body:not(.disable-alternative-checkboxes) input[data-task="b"]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="b"]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="b"]>p>input:checked,
+body:not(.disable-alternative-checkboxes) input[data-task="-"]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="-"]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="-"]>p>input:checked,
+body:not(.disable-alternative-checkboxes) input[data-task="l"]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="l"]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="l"]>p>input:checked,
+body:not(.disable-alternative-checkboxes) input[data-task="I"]:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="I"]>input:checked,
+body:not(.disable-alternative-checkboxes) li[data-task="I"]>p>input:checked,
